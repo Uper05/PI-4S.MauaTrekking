@@ -16,7 +16,7 @@ class RaListWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Icon(icon,color: Color.fromARGB(255, 0, 71, 133),),
+            Icon(icon,color: const Color.fromARGB(255, 0, 71, 133),),
             const SizedBox(width: 10),
             Text(
               title,
