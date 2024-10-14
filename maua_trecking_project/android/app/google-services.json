@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "256741630329",
+    "project_id": "trekking-maua",
+    "storage_bucket": "trekking-maua.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256741630329:android:a0cda78ccde5a156098fa8",
+        "android_client_info": {
+          "package_name": "com.mauatech.trekking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCvh3vtH0mRYD9i0jw8_As0tqLuCkwv5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

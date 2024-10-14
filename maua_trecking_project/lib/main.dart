@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:maua_trecking_project/src/app.dart';
 
+//imports do banco de dados
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+
+void main() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+  //^Este método é necessário antes de você executar qualquer código assíncrono, como inicializar o Firebase.
+  await Firebase.initializeApp(
+    //^Este comando inicializa o Firebase com as configurações que foram geradas anteriormente
+    //(no arquivo firebase_options.dart).
+    options: DefaultFirebaseOptions.currentPlatform, 
+    //^Esta linha recupera as opções de configuração específicas para a plataforma em que o aplicativo
+    //está sendo executado (Android, iOS, etc.). O arquivo firebase_options.dart contém as configurações
+    //necessárias, como o ID do aplicativo e as credenciais do Firebase.
+  );
+
   runApp(const MyApp());
 }
 
