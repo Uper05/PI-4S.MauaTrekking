@@ -3,6 +3,7 @@ import 'package:maua_trecking_project/src/app.dart';
 
 //imports do banco de dados
 import 'package:firebase_core/firebase_core.dart';
+import 'package:maua_trecking_project/src/screens/teacherscreen.dart';
 import 'firebase_options.dart';
 
 
@@ -27,10 +28,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Maua Trekking',
       debugShowCheckedModeBanner: false,
-      home: TelaHome(title: "Maua Trekking"),
+      initialRoute: '/',
+      routes:{
+        '/':(context)=>const TelaHome(title: "Maua Trekking",),
+        '/telaProfessor':(context)=>const TelaProfessor(title: "Maua Trekking Professores")
+      },
     );
   }
 }

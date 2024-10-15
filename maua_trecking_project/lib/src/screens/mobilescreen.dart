@@ -49,6 +49,7 @@ class MobileLayoutState extends State<MobileLayout> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 71, 133),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color.fromARGB(0, 0, 0, 0),
         actions: [
           Container(
@@ -57,7 +58,7 @@ class MobileLayoutState extends State<MobileLayout> {
                 color: Color.fromARGB(255, 223, 223, 223),
                 shape: BoxShape.circle),
             child: IconButton(
-                onPressed: getTextFieldValues,
+                onPressed: (){Navigator.pushNamed(context, '/telaProfessor');},
                 icon: const Icon(
                   Icons.book,
                   color: Color.fromARGB(255, 0, 71, 133),

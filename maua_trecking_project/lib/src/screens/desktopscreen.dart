@@ -51,14 +51,22 @@ class DesktopLayoutState extends State<DesktopLayout> {
           SizedBox(
             width: 500,
             child: AppBar(
+              automaticallyImplyLeading: false,
               backgroundColor: const Color.fromARGB(0, 0, 0, 0),
               actions: [
-                IconButton.filled(
-                    onPressed: getTextFieldValues,
-                    icon: const Icon(
-                      Icons.book,
-                      color: Color.fromARGB(255, 0, 71, 133),
-                    ))
+                Container(
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 223, 223, 223),
+                      shape: BoxShape.circle),
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/telaProfessor');
+                      },
+                      icon: const Icon(
+                        Icons.book,
+                        color: Color.fromARGB(255, 0, 71, 133),
+                      )),
+                )
               ],
             ),
           ),
