@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:maua_trecking_project/src/mixins/controllermixin.dart';
+import 'package:maua_trecking_project/src/mixins/listmixin.dart';
 import '../../widgets/ralist.dart';
 
 class DesktopLayout extends StatefulWidget {
@@ -10,37 +12,7 @@ class DesktopLayout extends StatefulWidget {
   }
 }
 
-class DesktopLayoutState extends State<DesktopLayout> {
-  final List<String> ratitulos = [
-    'RA Líder',
-    'RA Companheiro 1',
-    'RA Companheiro 2',
-    'RA Companheiro 3',
-    'RA Companheiro 4'
-  ];
-
-  final List<IconData> raicones = [
-    Icons.person,
-    Icons.group,
-    Icons.group,
-    Icons.group,
-    Icons.group
-  ];
-
-  late List<TextEditingController> controllers;
-
-  @override
-  void initState() {
-    super.initState();
-    controllers =
-        List.generate(ratitulos.length, (index) => TextEditingController());
-  }
-
-  void getTextFieldValues() {
-    List<String> valores =
-        controllers.map((controller) => controller.text).toList();
-    print(valores);
-  }
+class DesktopLayoutState extends State<DesktopLayout> with ListaMixin,Controllermixin{
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +89,7 @@ class DesktopLayoutState extends State<DesktopLayout> {
             height: 20,
           ),
           ElevatedButton(
-            onPressed: getTextFieldValues,
+            onPressed: () => getTextFieldValues(controllers),
             child: const Icon(
               Icons.arrow_forward,
               color: Color.fromARGB(255, 0, 71, 133),
