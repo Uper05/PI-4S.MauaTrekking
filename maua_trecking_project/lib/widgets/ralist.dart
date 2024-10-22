@@ -28,8 +28,12 @@ class RaListWidget extends StatelessWidget {
         TextField(
           controller: controller, // Associando o controlador ao TextField
           decoration: const InputDecoration(
-            border: OutlineInputBorder(),
+            border: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 0, 71, 133) )),
+            enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 0, 71, 133) )),
+            focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 0, 71, 133) )),
             labelText:'Digite o RA',
+            labelStyle: TextStyle(color: Color.fromARGB(255, 0, 71, 133)),
+            hintText: 'XX.XXXXX-X',
           ),
         ),
         const SizedBox(height: 20), // Espaço entre os widgets
