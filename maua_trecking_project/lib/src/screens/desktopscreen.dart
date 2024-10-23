@@ -89,7 +89,7 @@ class DesktopLayoutState extends State<DesktopLayout> with ListaMixin,Controller
             height: 20,
           ),
           ElevatedButton(
-            onPressed: () => popUpConfirma(context,300,200),
+            onPressed: () => popUpConfirma(context,300,200,controllers),
             child: const Icon(
               Icons.arrow_forward,
               color: Color.fromARGB(255, 0, 71, 133),

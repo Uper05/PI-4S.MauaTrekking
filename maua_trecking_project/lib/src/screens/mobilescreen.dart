@@ -87,7 +87,7 @@ class MobileLayoutState extends State<MobileLayout>  with ListaMixin,Controllerm
             height: 20,
           ),
           ElevatedButton(
-            onPressed:() => popUpConfirma(context,screenWidth/3.9,screenHeight/3.9),
+            onPressed:() => popUpConfirma(context,screenWidth/3.9,screenHeight/3.9,controllers),
             child: const Icon(
               Icons.arrow_forward,
               color: Color.fromARGB(255, 0, 71, 133),

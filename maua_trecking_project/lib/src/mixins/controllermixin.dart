@@ -8,7 +8,7 @@ mixin class Controllermixin {
     return valores;
   }
 
-  Future popUpConfirma(BuildContext context, double screenWidth,double screenHeight) =>
+  Future popUpConfirma(BuildContext context, double screenWidth,double screenHeight,List<TextEditingController> controllers) =>
       showDialog(
           context: context,
           builder: (context) => AlertDialog(
@@ -55,7 +55,7 @@ mixin class Controllermixin {
                                 width: 1,
                                 color: Color.fromARGB(255, 0, 71, 133)),
                           ),
-                          onPressed: () {},
+                          onPressed: () =>getTextFieldValues(controllers),
                           child: const Text("Confirma")),
                     ],
                   ),
