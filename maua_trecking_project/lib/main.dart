@@ -3,6 +3,7 @@ import 'package:maua_trecking_project/src/app.dart';
 
 //imports do banco de dados
 import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:maua_trecking_project/src/screens/teacherscreen.dart';
 import 'firebase_options.dart';
 
