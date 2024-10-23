@@ -28,7 +28,7 @@ class MobileLayoutProfessorState extends State<MobileLayoutProfessor>{
                 color: Color.fromARGB(255, 223, 223, 223),
                 shape: BoxShape.circle),
             child: IconButton(
-                onPressed: (){Navigator.pushNamed(context, '/');},
+                onPressed: (){Navigator.pop(context);},
                 icon: const Icon(
                   Icons.arrow_back,
                   color: Color.fromARGB(255, 0, 71, 133),
