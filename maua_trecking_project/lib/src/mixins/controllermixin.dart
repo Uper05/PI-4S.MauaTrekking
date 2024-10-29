@@ -1,16 +1,18 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
-FirebaseFirestore firestoreDB = FirebaseFirestore.instance;
+import '../back_end/firestore.dart';
 
 mixin class Controllermixin {
   List<String> getTextFieldValues(List<TextEditingController> controllers) {
     List<String> valores =
         controllers.map((controller) => controller.text).toList();
-    firestoreDB.collection("Equipe").add({'RAEquipe': valores,}).then((DocumentReference doc) =>
-    print('Documento adicionado com ID: ${doc.id}'));
+
+    //chamando função do firestore.dart
+    salvarEquipe(valores);
+    salvarHorario();
+
     return valores;
   }
+
 
   Future popUpConfirma(BuildContext context, double screenWidth,double screenHeight,List<TextEditingController> controllers) =>
       showDialog(
