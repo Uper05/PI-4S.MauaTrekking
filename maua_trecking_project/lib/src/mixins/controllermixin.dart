@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import '../back_end/firestore.dart';
 
 mixin class Controllermixin {
   List<String> getTextFieldValues(List<TextEditingController> controllers) {
     List<String> valores =
         controllers.map((controller) => controller.text).toList();
-    print(valores);
+
+    //chamando função do firestore.dart
+    salvarEquipe(valores);
+    salvarHorario();
+
     return valores;
   }
 
