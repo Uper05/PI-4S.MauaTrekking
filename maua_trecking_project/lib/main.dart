@@ -22,8 +22,6 @@ void main() async{
   );
 
   runApp(const MyApp());
-
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
 }
 
 class MyApp extends StatelessWidget {

@@ -1,10 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+FirebaseFirestore firestoreDB = FirebaseFirestore.instance;
 
 mixin class Controllermixin {
   List<String> getTextFieldValues(List<TextEditingController> controllers) {
     List<String> valores =
         controllers.map((controller) => controller.text).toList();
-    print(valores);
+    firestoreDB.collection("Equipe").add({'RAEquipe': valores,}).then((DocumentReference doc) =>
+    print('Documento adicionado com ID: ${doc.id}'));
     return valores;
   }
 
