@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maua_trecking_project/src/homescreen.dart';
+import 'package:maua_trecking_project/src/screens/homescreen.dart';
 
 //imports do banco de dados
 import 'package:firebase_core/firebase_core.dart';
