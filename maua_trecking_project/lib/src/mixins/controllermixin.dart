@@ -17,7 +17,7 @@ mixin class Controllermixin {
                   children: [
                     Text(
                       "Aviso",
-                      style: TextStyle(color: Color.fromARGB(255, 0, 71, 133)),
+                      style: TextStyle(color: Color.fromARGB(255, 0, 71, 133),fontVariations: [FontVariation("wght", 500.0)]),
                     )
                   ],
                 ),
@@ -26,9 +26,9 @@ mixin class Controllermixin {
                   height: screenHeight,
                   child: const Center(
                     child: Text(
-                      "Verifique que os RA's escritos estão de acordo com os RA's do seu grupo, não será possível muda-lôs após o registro.",
+                      "Verifique que os RA's escritos estão de acordo com os RA's do seu grupo, não será possível muda-lôs após o registro. No caso de erro fale com seu professor",
                       style: TextStyle(
-                          color: Color.fromARGB(255, 0, 71, 133), fontSize: 20),
+                          color: Color.fromARGB(255, 0, 71, 133), fontSize: 20,fontVariations: [FontVariation("wght", 400.0)]),
                     ),
                   ),
                 ),
@@ -45,7 +45,7 @@ mixin class Controllermixin {
                                 color: Color.fromARGB(255, 0, 71, 133)),
                           ),
                           onPressed: Navigator.of(context).pop,
-                          child: const Text("Cancelar")),
+                          child: const Text("Cancelar",style: TextStyle(fontSize: 18.0,fontVariations: [FontVariation("wght", 400.0)]),)),
                       const Spacer(),
                       OutlinedButton(
                           style: OutlinedButton.styleFrom(
@@ -56,9 +56,10 @@ mixin class Controllermixin {
                                 color: Color.fromARGB(255, 0, 71, 133)),
                           ),
                           onPressed: () =>getTextFieldValues(controllers),
-                          child: const Text("Confirma")),
+                          child: const Text("Confirma",style:TextStyle(fontSize: 18.0,fontVariations: [FontVariation("wght", 400.0)]),)),
                     ],
                   ),
                 ],
-              ));
+              )
+            );
 }

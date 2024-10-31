@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/mobilescreen.dart';
-import 'screens/desktopscreen.dart';
+import 'screens/homemobilescreen.dart';
+import 'screens/homedesktopscreen.dart';
 
 class TelaHome extends StatelessWidget {
   const TelaHome({super.key, required this.title});

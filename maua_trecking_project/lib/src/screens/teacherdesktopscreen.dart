@@ -2,49 +2,49 @@ import 'package:flutter/material.dart';
 import '../../widgets/inputwidget.dart';
 import '../mixins/teacherlistmixin.dart';
 
-class MobileLayoutProfessor extends StatefulWidget {
-  const MobileLayoutProfessor({super.key});
+class DesktopLayoutProfessor extends StatefulWidget {
+  const DesktopLayoutProfessor({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return MobileLayoutProfessorState();
+    return DesktopLayoutProfessorState();
   }
 }
 
-class MobileLayoutProfessorState extends State<MobileLayoutProfessor> {
+class DesktopLayoutProfessorState extends State<DesktopLayoutProfessor> {
   @override
   Widget build(BuildContext context) {
-    final double screenWidth = MediaQuery.of(context).size.width;
-
     final email = EmailInput();
     final password = PasswordInput();
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 37, 69),
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: const Color.fromARGB(0, 0, 0, 0),
-        actions: [
-          Container(
-            margin: const EdgeInsets.only(right: 10, top: 10),
-            decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 223, 223, 223),
-                shape: BoxShape.circle),
-            child: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(
-                  Icons.arrow_back,
-                  color: Color.fromARGB(255, 0, 37, 69),
-                )),
-          )
-        ],
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+              width: 500,
+              child: AppBar(
+                automaticallyImplyLeading: false,
+                backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+                actions: [
+                  Container(
+                    decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 223, 223, 223),
+                        shape: BoxShape.circle),
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(
+                          Icons.arrow_back,
+                          color: Color.fromARGB(255, 0, 37, 69),
+                        )),
+                  )
+                ],
+              ),
+            ),
             const Text(
               "Mauá Trekking",
               style: TextStyle(
@@ -62,7 +62,7 @@ class MobileLayoutProfessorState extends State<MobileLayoutProfessor> {
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
               child: SizedBox(
-                width: screenWidth * 0.75,
+                width: 500,
                 height: 300,
                 child: Container(
                   decoration: BoxDecoration(
@@ -71,6 +71,7 @@ class MobileLayoutProfessorState extends State<MobileLayoutProfessor> {
                   child: Padding(
                     padding: const EdgeInsets.all(16),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         InputWidget(
                             icon: email.icon,
@@ -78,7 +79,7 @@ class MobileLayoutProfessorState extends State<MobileLayoutProfessor> {
                             controller: email.controller,
                             labeltext: email.label,
                             hinttext: email.hint,
-                            obscuretext: email.obscuretext,
+                            obscuretext: password.obscuretext,
                             ),
                         const SizedBox(height: 20),
                         InputWidget(
@@ -98,19 +99,18 @@ class MobileLayoutProfessorState extends State<MobileLayoutProfessor> {
             Padding(
               padding: const EdgeInsets.only(top: 16.0),
               child: SizedBox(
-                width: screenWidth * 0.75,
+                width: 500,
                 child: Row(
                   children: [
                     Expanded(
-                      child: ElevatedButton(
-                          onPressed: () {},
-                          child: const Text(
-                            "Fazer Login",
-                            style: TextStyle(
-                                fontVariations: [FontVariation('wght', 500.0)],
-                                color: Color.fromARGB(255, 0, 37, 69),fontSize: 20.0),
-                          )),
-                    )
+                        child: ElevatedButton(
+                            onPressed: () {},
+                            child: const Text(
+                              "Fazer Login",
+                              style: TextStyle(fontVariations: [
+                                FontVariation('wght', 500.0)
+                              ], color: Color.fromARGB(255, 0, 37, 69),fontSize: 20.0),
+                            ))),
                   ],
                 ),
               ),

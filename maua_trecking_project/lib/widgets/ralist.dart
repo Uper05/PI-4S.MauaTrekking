@@ -20,7 +20,7 @@ class RaListWidget extends StatelessWidget {
             const SizedBox(width: 10),
             Text(
               title,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Color.fromARGB(255, 0, 71, 133),),
+              style: const TextStyle(fontSize: 24.0, fontVariations: [FontVariation('wght', 500.0)],color: Color.fromARGB(255, 0, 71, 133),),
             ),
           ],
         ),
@@ -32,9 +32,10 @@ class RaListWidget extends StatelessWidget {
             enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 0, 71, 133) )),
             focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 0, 71, 133) )),
             labelText:'Digite o RA',
-            labelStyle: TextStyle(color: Color.fromARGB(255, 0, 71, 133)),
+            labelStyle: TextStyle(fontSize: 20.0,fontVariations: [FontVariation('wght', 400.0)],color: Color.fromARGB(255, 0, 71, 133)),
             hintText: 'XX.XXXXX-X',
           ),
+          style: const TextStyle(fontSize: 20.0,fontVariations: [FontVariation('wght', 400.0)]),
         ),
         const SizedBox(height: 20), // Espaço entre os widgets
       ],

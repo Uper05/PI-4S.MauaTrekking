@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maua_trecking_project/src/app.dart';
+import 'package:maua_trecking_project/src/homescreen.dart';
 
 //imports do banco de dados
 import 'package:firebase_core/firebase_core.dart';
@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Maua Trekking',
+      theme: ThemeData(fontFamily: "Genos"),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes:{

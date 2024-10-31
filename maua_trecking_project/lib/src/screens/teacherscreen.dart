@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:maua_trecking_project/src/screens/teacherdesktopscreen.dart';
 import 'package:maua_trecking_project/src/screens/teachermobilescreen.dart';
 
 class TelaProfessor extends StatelessWidget {
@@ -12,7 +13,7 @@ class TelaProfessor extends StatelessWidget {
     
     return Scaffold(
       body: LayoutBuilder(builder: (context, constrains){
-        return constrains.maxWidth <= 700? MobileLayoutProfessor():MobileLayoutProfessor();
+        return constrains.maxWidth <= 700? const MobileLayoutProfessor():const DesktopLayoutProfessor();
       })
     );
   }
