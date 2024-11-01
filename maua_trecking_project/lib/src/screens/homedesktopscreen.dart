@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maua_trecking_project/src/mixins/controllermixin.dart';
 import 'package:maua_trecking_project/src/mixins/listmixin.dart';
-import '../../widgets/ralist.dart';
+import 'package:maua_trecking_project/src/mixins/popupmixin.dart';
+import '../widgets/ralist.dart';
 
 class DesktopLayout extends StatefulWidget {
   const DesktopLayout({super.key});
@@ -12,7 +13,7 @@ class DesktopLayout extends StatefulWidget {
   }
 }
 
-class DesktopLayoutState extends State<DesktopLayout> with ListaMixin,Controllermixin{
+class DesktopLayoutState extends State<DesktopLayout> with ListaMixin,Controllermixin,Popupmixin{
 
   @override
   Widget build(BuildContext context) {

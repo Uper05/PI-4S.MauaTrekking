@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maua_trecking_project/src/mixins/controllermixin.dart';
 import 'package:maua_trecking_project/src/mixins/listmixin.dart';
-import '../../widgets/ralist.dart';
+import 'package:maua_trecking_project/src/mixins/popupmixin.dart';
+import '../widgets/ralist.dart';
 
 class MobileLayout extends StatefulWidget {
   const MobileLayout({super.key});
@@ -13,7 +14,7 @@ class MobileLayout extends StatefulWidget {
 }
 
 class MobileLayoutState extends State<MobileLayout>
-    with ListaMixin, Controllermixin {
+    with ListaMixin, Controllermixin,Popupmixin {
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;

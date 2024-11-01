@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../widgets/inputwidget.dart';
+import '../widgets/inputwidget.dart';
 import '../mixins/teacherlistmixin.dart';
 
 class MobileLayoutProfessor extends StatefulWidget {

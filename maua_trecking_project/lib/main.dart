@@ -5,6 +5,7 @@ import 'package:maua_trecking_project/src/screens/homescreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:maua_trecking_project/src/screens/teacherscreen.dart';
+import 'package:maua_trecking_project/src/screens/trekkingscreen.dart';
 import 'firebase_options.dart';
 
 
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes:{
         '/':(context)=>const TelaHome(title: "Maua Trekking",),
-        '/telaProfessor':(context)=>const TelaProfessor(title: "Maua Trekking Professores")
+        '/telaProfessor':(context)=>const TelaProfessor(title: "Maua Trekking Professores"),
+        '/telaTrekking':(context)=>const TrekkingScreen()
       },
     );
   }
