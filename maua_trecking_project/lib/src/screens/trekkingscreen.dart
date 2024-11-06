@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../back_end/storage.dart';
 
 class TrekkingScreen extends StatefulWidget {
   const TrekkingScreen({super.key});
@@ -10,14 +11,19 @@ class TrekkingScreen extends StatefulWidget {
 }
 
 class TrekkingScreenState extends State<TrekkingScreen> {
+  
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
         child: Column(
-          children: [Text("data")],
+          children: [
+            
+          ],
         ),
       ),
     );
   }
 }
+
+
