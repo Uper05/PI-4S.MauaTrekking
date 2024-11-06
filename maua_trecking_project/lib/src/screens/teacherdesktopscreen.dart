@@ -79,7 +79,7 @@ class DesktopLayoutProfessorState extends State<DesktopLayoutProfessor> {
                             controller: email.controller,
                             labeltext: email.label,
                             hinttext: email.hint,
-                            obscuretext: password.obscuretext,
+                            obscuretext: email.obscuretext,
                             ),
                         const SizedBox(height: 20),
                         InputWidget(
