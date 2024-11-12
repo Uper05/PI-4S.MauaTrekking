@@ -12,7 +12,7 @@ class TelaHome extends StatelessWidget {
     
     return Scaffold(
       body: LayoutBuilder(builder: (context, constrains){
-        return constrains.maxWidth <= 700?const MobileLayout(): DesktopLayout();
+        return constrains.maxWidth <= 700?const MobileLayout():const DesktopLayout();
       })
     );
   }

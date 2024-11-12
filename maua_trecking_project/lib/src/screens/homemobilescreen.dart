@@ -13,8 +13,7 @@ class MobileLayout extends StatefulWidget {
   }
 }
 
-class MobileLayoutState extends State<MobileLayout>
-    with ListaMixin, Controllermixin,Popupmixin {
+class MobileLayoutState extends State<MobileLayout> with ListaMixin, Controllermixin,Popupmixin {
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;

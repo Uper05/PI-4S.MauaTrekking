@@ -9,8 +9,7 @@ Future<void> salvarEquipe(List<String> valores) async {
 
 }
 
-String salvarHorario() {
+Future<void> salvarHorario() async {
   DateTime agora = DateTime.now();
   String horario = "${agora.hour}:${agora.minute}:${agora.second}";
-  return horario;
 }
