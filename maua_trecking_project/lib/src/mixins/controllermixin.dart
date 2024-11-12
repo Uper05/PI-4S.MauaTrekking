@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import '../back_end/firestore.dart';
 
 mixin class Controllermixin {
-  void getTextFieldValues(List<TextEditingController> controllers, BuildContext context) {
-    List<String> valores =
-        controllers.map((controller) => controller.text).toList();
+  Future<void> getTextFieldValues(List<TextEditingController> controllers, BuildContext context) async {
+    // Obtém os valores dos campos de texto
+    List<String> valores = controllers.map((controller) => controller.text).toList();
 
-    //chamando função do firestore.dart(U:Lembrar de Descomentar as funções após terminar a tela de trekking)
-    //salvarEquipe(valores);
-    //salvarHorario();
+    // Salva a equipe e armazena o ID da equipe no backend
+    String docId = await salvarEquipe(valores);
+
+    registrarHoraInicio();
+
+    // Navega para a próxima tela
     Navigator.pushNamed(context, '/telaTrekking');
-    
   }
 
 }
