@@ -14,6 +14,8 @@ class TrekkingScreen extends StatefulWidget {
 class TrekkingScreenState extends State<TrekkingScreen> with InfoPopUp {
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor:Color.fromARGB(255, 0, 71, 133),
       appBar: AppBar(
@@ -27,7 +29,7 @@ class TrekkingScreenState extends State<TrekkingScreen> with InfoPopUp {
                 shape: BoxShape.circle),
             child: IconButton(
                 onPressed: () {
-                 infoPopup(context);
+                 infoPopup(context,screenHeight,screenWidth);
                 },
                 icon: const Icon(
                   Icons.info,
