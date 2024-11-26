@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maua_trecking_project/src/mixins/popup_info_mixin.dart';
 import '../back_end/storage.dart';
+import 'camerascreen.dart'; // Importa a tela de câmera
 
 class TrekkingScreen extends StatefulWidget {
   const TrekkingScreen({super.key});
@@ -13,23 +14,22 @@ class TrekkingScreen extends StatefulWidget {
 
 class TrekkingScreenState extends State<TrekkingScreen> with InfoPopUp {
   final StorageService _storageService = StorageService();
-  String? _imageUrl; // Variável para armazenar o URL da imagem
+  String? _imageUrl;
 
   @override
   void initState() {
     super.initState();
-    _loadImage(); // Chama o método para carregar a imagem ao iniciar
+    _loadImage();
   }
 
-  // Método para carregar a imagem do Firebase Storage
   Future<void> _loadImage() async {
     try {
-      String url = await _storageService.getDownload(); // Obtém o URL da imagem
+      String url = await _storageService.getDownload();
       setState(() {
-        _imageUrl = url; // Atualiza a variável com o URL da imagem
+        _imageUrl = url;
       });
     } catch (e) {
-      print("Erro ao carregar a imagem: $e"); // Em caso de erro
+      print("Erro ao carregar a imagem: $e");
     }
   }
 
@@ -39,7 +39,7 @@ class TrekkingScreenState extends State<TrekkingScreen> with InfoPopUp {
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 71, 133),
+      backgroundColor: const Color.fromARGB(255, 0, 71, 133),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: const Color.fromARGB(0, 0, 0, 0),
@@ -62,8 +62,18 @@ class TrekkingScreenState extends State<TrekkingScreen> with InfoPopUp {
       ),
       body: Center(
         child: _imageUrl != null
-            ? Image.network(_imageUrl!) // Exibe a imagem quando o URL estiver carregado
-            : const CircularProgressIndicator(), // Exibe um indicador de carregamento enquanto o URL está sendo carregado
+            ? Image.network(_imageUrl!)
+            : const CircularProgressIndicator(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color.fromARGB(255, 0, 71, 133),
+        child: const Icon(Icons.qr_code_scanner, color: Colors.white),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const CameraScreen()),
+          );
+        },
       ),
     );
   }

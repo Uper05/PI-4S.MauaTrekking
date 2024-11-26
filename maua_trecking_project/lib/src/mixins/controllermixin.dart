@@ -7,9 +7,9 @@ mixin class Controllermixin {
     List<String> valores = controllers.map((controller) => controller.text).toList();
 
     // Salva a equipe e armazena o ID da equipe no backend
-    String docId = await salvarEquipe(valores);
-
-    registrarHoraInicio();
+    await salvarEquipe(valores);
+    // Salva o horário de início no backend
+    registrarHora();
 
     // Navega para a próxima tela
     Navigator.pushNamed(context, '/telaTrekking');
