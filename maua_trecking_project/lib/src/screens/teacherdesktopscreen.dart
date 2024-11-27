@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/inputwidget.dart';
 import '../mixins/teacherlistmixin.dart';
+import '../back_end/auth_service.dart';
 
 class DesktopLayoutProfessor extends StatefulWidget {
   const DesktopLayoutProfessor({super.key});
@@ -112,7 +113,14 @@ class DesktopLayoutProfessorState extends State<DesktopLayoutProfessor> {
                   children: [
                     Expanded(
                         child: ElevatedButton(
-                            onPressed: () {print(email.controller.text);},
+                            onPressed: () async {
+                              final authService = AuthService();
+                              await authService.login(
+                                email: email.controller.text.trim(),
+                                password: password.controller.text.trim(),
+                                context: context,
+                              );
+                            },
                             child: const Text(
                               "Fazer Login",
                               style: TextStyle(fontVariations: [
