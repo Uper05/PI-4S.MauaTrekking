@@ -62,6 +62,7 @@ flutter_launcher_icons:
   min_sdk_android: 21 # android min sdk min:16, default 21
   adaptive_icon_foreground: "images/AppIcon.png"
   adaptive_icon_background: "#ffffff"
+  remove_alpha_ios: true
   
 
 # For information on the generic Dart part of this file, see the
