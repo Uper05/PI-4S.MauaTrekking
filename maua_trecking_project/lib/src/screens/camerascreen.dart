@@ -37,26 +37,34 @@ class _CameraScreenState extends State<CameraScreen> {
 
   // Função para tentar abrir o URL
   Future<void> _launchURL(String url) async {
-  final Uri uri = Uri.parse(url); // Cria o objeto Uri a partir do URL
+    final Uri uri = Uri.parse(url); // Cria o objeto Uri a partir do URL
 
-  try {
-    await launchUrl(uri); // Tenta abrir o link diretamente
-  } catch (e) {
-    // Exibe uma mensagem de erro se não for possível abrir o link
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Não foi possível abrir o link.")),
-    );
-    print("Erro ao tentar abrir o link: $uri, $e");
+    try {
+      await launchUrl(uri); // Tenta abrir o link diretamente
+    } catch (e) {
+      // Exibe uma mensagem de erro se não for possível abrir o link
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Não foi possível abrir o link.")),
+      );
+      print("Erro ao tentar abrir o link: $uri, $e");
+    }
   }
-}
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Color.fromARGB(255, 223, 223, 223), //change your color here
+        ),
+        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 0, 71, 133),
-        title: const Text("Escanear QR Code"),
+        title: const Text(
+          "Escanear QR Code",
+          style: TextStyle(
+              color: Color.fromARGB(255, 223, 223, 223),
+              fontVariations: [FontVariation('wght', 600.0)]),
+        ),
       ),
       body: MobileScanner(
         controller: scannerController,
@@ -66,7 +74,11 @@ class _CameraScreenState extends State<CameraScreen> {
         onPressed: () {
           scannerController.toggleTorch();
         },
-        child: const Icon(Icons.flash_on),
+        backgroundColor: const Color.fromARGB(255, 0, 71, 133),
+        child: const Icon(
+          Icons.flash_on,
+          color: Color.fromARGB(255, 223, 223, 223),
+        ),
       ),
     );
   }

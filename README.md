@@ -19,6 +19,11 @@ Para rodar o projeto em sua máquina, siga os passos abaixo:
    ```bash
    git clone https://github.com/Uper05/PI-4S.MauaTrekking.git
 2. **Instale o Flutter SDK**
-   - Lembre-se de utilizar o comando `flutter upgrade` caso necessite atualizar o Flutter/Dart
+   - Lembre-se de utilizar o comando `flutter upgrade` caso necessite atualizar o Flutter/Dart.
 3. **Instale as dependências do projeto**
-   - Execute o seguinte comando no diretório do projeto: `flutter pub get`
+   - Execute o seguinte comando no diretório do projeto: `flutter pub get`.
+4.**Entre no diretório correto**
+   -Utilize o comando 'cd .\maua_trecking_project\'.
+5.**Execute o Programa**
+   -Utilize o comando 'flutter run -d chrome --web-renderer html'.
+

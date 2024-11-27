@@ -61,20 +61,40 @@ class TrekkingScreenState extends State<TrekkingScreen> with InfoPopUp {
         ],
       ),
       body: Center(
-        child: _imageUrl != null
-            ? Image.network(_imageUrl!)
-            : const CircularProgressIndicator(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color.fromARGB(255, 0, 71, 133),
-        child: const Icon(Icons.qr_code_scanner, color: Colors.white),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const CameraScreen()),
-          );
-        },
-      ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Column(
+                    children: [
+            Container(
+              height: 650,
+              width: 400,
+              child: ListView(
+                children: [
+                  _imageUrl != null
+                      ? Image.network(_imageUrl!)
+                      : const CircularProgressIndicator(),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Container(
+                child: Center(
+                  child: FloatingActionButton(
+                    backgroundColor: const Color.fromARGB(255, 223, 223, 223),
+                    child: const Icon(Icons.qr_code_scanner, color: Color.fromARGB(255, 0, 71, 133)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const CameraScreen()),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ),
+                    ],
+                  ),
+          )),
     );
   }
 }
