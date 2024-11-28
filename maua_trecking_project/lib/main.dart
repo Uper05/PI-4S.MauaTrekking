@@ -36,18 +36,23 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> _initializeDeepLinks() async {
-    _appLinks = AppLinks();
-    _appLinks.uriLinkStream.listen((Uri? uri) {
-      if (uri != null) {
-        debugPrint('Deep Link recebido: $uri');
-        // Verifique o caminho para tomar a ação adequada
-        if (uri.path == '/pontuar') {
-          // Navegue para a tela de pontuação (ou chame os métodos diretamente)
-          _navigatorKey.currentState?.pushNamed('/pontuar');
+  _appLinks = AppLinks();
+  _appLinks.uriLinkStream.listen((Uri? uri) {
+    if (uri != null) {
+      debugPrint('Deep Link recebido: $uri');
+      if (uri.scheme == 'trekkingmaua' && uri.host == 'pontuar') {
+        if (!_handlingDeepLink) { // Adicione esta verificação
+          _handlingDeepLink = true; // Marque como em processo
+          _navigatorKey.currentState?.pushReplacementNamed('/pontuar').whenComplete(() {
+            _handlingDeepLink = false; // Libere ao terminar
+          });
         }
       }
-    });
+    }
+  });
   }
+
+  bool _handlingDeepLink = false;
 
   @override
   Widget build(BuildContext context) {
