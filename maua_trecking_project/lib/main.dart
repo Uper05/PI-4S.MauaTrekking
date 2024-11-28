@@ -2,6 +2,7 @@ import 'package:app_links/app_links.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:maua_trecking_project/src/screens/resultscreen.dart';
 import 'firebase_options.dart';
 
 import 'package:maua_trecking_project/src/screens/calcularpontos.dart';
@@ -67,6 +68,7 @@ class _MyAppState extends State<MyApp> {
         '/telaProfessor': (context) => const TelaProfessor(title: "Maua Trekking Professores"),
         '/telaTrekking': (context) => const TrekkingScreen(),
         '/pontuar': (context) => const CalcularPontosScreen(),
+        '/resultProfessor':(context)=> const ResultScreen(),
       },
     );
   }

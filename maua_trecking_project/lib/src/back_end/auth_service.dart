@@ -22,7 +22,7 @@ class AuthService {
 
       if (query.docs.isNotEmpty) {
         //login válido, navega para a próxima tela
-        Navigator.pushReplacementNamed(context, '/telaTrekking');
+        Navigator.pushReplacementNamed(context, '/resultProfessor');
       } else {
         // Exibe um Toast de erro caso os dados sejam inválidos
         Fluttertoast.showToast(
