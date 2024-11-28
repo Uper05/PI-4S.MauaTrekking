@@ -10,25 +10,9 @@ String? getEquipeId() {
   return _equipeId;
 }
 
-// Função para obter os RAs da equipe armazenados no Firestore
-Future<List<String>?> getEquipeRA() async {
-  if (_equipeId == null) {
-    throw Exception("O ID da equipe não foi inicializado. Salve a equipe primeiro.");
-  }
-
-  // Recupera o documento da equipe do Firestore
-  DocumentSnapshot docSnapshot = await firestoreDB.collection("Equipe").doc(_equipeId).get();
-  
-  if (docSnapshot.exists) {
-    // Converte os dados para Map<String, dynamic> para acessar os campos
-    Map<String, dynamic>? data = docSnapshot.data() as Map<String, dynamic>?;
-    
-    // Recupera os RAs da equipe (caso existam) e retorna como uma lista de strings
-    List<dynamic> rAs = data?['RAEquipe'] ?? [];
-    return List<String>.from(rAs);
-  } else {
-    throw Exception("Documento da equipe não encontrado no Firestore.");
-  }
+// Função para obter todos os documentos da coleção 'Equipe' e atualizá-los em tempo real
+Stream<QuerySnapshot> obterEquipes() {
+  return FirebaseFirestore.instance.collection('Equipe').snapshots();
 }
 
 // Função para obter as pontuações de uma equipe no Firestore
