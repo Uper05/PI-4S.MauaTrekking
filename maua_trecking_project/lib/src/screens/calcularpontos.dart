@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import '../back_end/firestore.dart';
+import '../back_end/operations.dart';
+import '../back_end/firestoreEquipe.dart';
 
 class CalcularPontosScreen extends StatefulWidget {
   const CalcularPontosScreen({super.key});
@@ -33,17 +34,23 @@ class _CalcularPontosState extends State<CalcularPontosScreen> {
       if (await getTamanhoPontuacao() == 7) {
         // Exibe o Toast de finalização
         Fluttertoast.showToast(
-          msg: "Jogo finalizado! Você completou todas as etapas.",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.BOTTOM,
-          timeInSecForIosWeb: 1,
+          msg: "Jogo finalizado! Você completou todas as etapas.\nRetorne imediatamente à sua sala de aula e aguarde o resultado.",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 2,
           backgroundColor: const Color.fromARGB(255, 0, 71, 133),
           textColor: Colors.white,
-          fontSize: 16.0,
+          fontSize: 18.0,
         );
 
-        // Retorna à primeira tela (a tela inicial ou onde preferir)
+        // Fecha o pop-up caso esteja aberto
+        if (Navigator.canPop(context)) {
+          Navigator.pop(context); // Fecha o diálogo ativo (se existir)
+        }
+
+        // Retorna à primeira tela
         Navigator.popUntil(context, (route) => route.isFirst); // Volta para a primeira tela
+        return; // Garante que não continuará para fechar a tela atual
       }
 
       // Exibe o Toast ao finalizar

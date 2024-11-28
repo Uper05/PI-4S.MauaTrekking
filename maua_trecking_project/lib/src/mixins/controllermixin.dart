@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../back_end/firestore.dart';
+import '../back_end/firestoreEquipe.dart';
+import '../back_end/operations.dart';
 
 mixin class Controllermixin {
   Future<void> getTextFieldValues(List<TextEditingController> controllers, BuildContext context) async {
