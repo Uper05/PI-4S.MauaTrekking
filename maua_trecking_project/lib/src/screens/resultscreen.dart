@@ -13,7 +13,7 @@ class ResultScreenState extends State<ResultScreen>{
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 37, 69),
       appBar: AppBar(automaticallyImplyLeading: false,backgroundColor: const Color.fromARGB(0, 0, 0, 0),),
-      body:Center(child: Tablewidget()),
+      body:const Center(child: Tablewidget()),
       );
   }
 }

@@ -40,7 +40,7 @@ class DesktopLayoutProfessorState extends State<DesktopLayoutProfessor> {
                         shape: BoxShape.circle),
                     child: IconButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.pushNamed(context,'/');
                         },
                         icon: const Icon(
                           Icons.arrow_back,

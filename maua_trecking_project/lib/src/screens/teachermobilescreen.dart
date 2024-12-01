@@ -35,7 +35,7 @@ class MobileLayoutProfessorState extends State<MobileLayoutProfessor> {
                 shape: BoxShape.circle),
             child: IconButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context,'/');
                 },
                 icon: const Icon(
                   Icons.arrow_back,
