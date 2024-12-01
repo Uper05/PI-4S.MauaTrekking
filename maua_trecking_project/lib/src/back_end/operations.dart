@@ -56,3 +56,5 @@ Future<void> calcularPontos() async {
     throw Exception("Não há pontos suficientes registrados para calcular a pontuação.");
   }
 }
+
+

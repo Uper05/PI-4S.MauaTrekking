@@ -48,3 +48,19 @@ Future<void> atualizarPontuacao(int pontos) async {
   // Atualiza também a lista local
   _pontuacoes = (_pontuacoes ?? [])..add(pontos);
 }
+
+Future<void> atualizarRA(String equipeId, int index, String novoRA) async {
+  // Obter o documento atual
+  DocumentSnapshot docSnapshot = await firestoreDB.collection('Equipe').doc(equipeId).get();
+  List<String> raEquipeList = List<String>.from(docSnapshot['RAEquipe'] ?? []);
+
+  // Atualizar o RA específico
+  if (index >= 0 && index < raEquipeList.length) {
+    raEquipeList[index] = novoRA;
+
+    // Enviar a atualização para o Firestore
+    await firestoreDB.collection('Equipe').doc(equipeId).update({
+      'RAEquipe': raEquipeList,
+    });
+  }
+}

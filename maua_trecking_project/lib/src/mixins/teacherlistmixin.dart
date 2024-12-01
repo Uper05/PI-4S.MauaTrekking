@@ -16,7 +16,7 @@ class EmailInput with InputMixin{
     title = "Email";
     controller = TextEditingController();
     label = "Digite seu Email";
-    hint = "XX.XXXXX-X@maua.br";
+    hint = "exemploemail@maua.br";
     obscuretext = false;
   }
 }
